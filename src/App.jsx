@@ -10,11 +10,11 @@ import WeatherLog from "./components/WeatherLog";
 
 const router = createBrowserRouter(
   [
-    { path: "/", element: <Home /> },
-    { path: "/mylocation", element: <MyLocation /> },
-    { path: "/city", element: <City /> },
-    { path: "/coordinates", element: <CoOrdinates /> },
-    { path: "/weatherlogs", element: <WeatherLog /> },
+    { path: "/WeatherInfo/", element: <Home /> },
+    { path: "/WeatherInfo/mylocation", element: <MyLocation /> },
+    { path: "/WeatherInfo/city", element: <City /> },
+    { path: "/WeatherInfo/coordinates", element: <CoOrdinates /> },
+    { path: "/WeatherInfo/weatherlogs", element: <WeatherLog /> },
   ]
 )
 function App() {

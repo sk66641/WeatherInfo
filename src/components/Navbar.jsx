@@ -10,11 +10,11 @@ const Navbar = () => {
                 <span className='text-white text-xl font-serif font-bold'>WeatherInfo</span>
             </div>
             <ul className='navbar flex gap-4 text-black md:'>
-                <li><a className='hover:font-semibold' href="/">Home</a></li>
-                <li><a className='hover:font-semibold' href="/mylocation">My Location</a></li>
-                <li><a className='hover:font-semibold' href="/city">City</a></li>
-                <li><a className='hover:font-semibold' href="/coordinates">Co-odinates</a></li>
-                <li><a className='hover:font-semibold' href="/weatherlogs">Weather logs</a></li>
+                <li><a className='hover:font-semibold' href="/WeatherInfo/">Home</a></li>
+                <li><a className='hover:font-semibold' href="/WeatherInfo/mylocation">My Location</a></li>
+                <li><a className='hover:font-semibold' href="/WeatherInfo/city">City</a></li>
+                <li><a className='hover:font-semibold' href="/WeatherInfo/coordinates">Co-odinates</a></li>
+                <li><a className='hover:font-semibold' href="/WeatherInfo/weatherlogs">Weather logs</a></li>
                 <li><a className='hover:font-semibold' href="https://github.com/sk66641">About Us</a></li>
             </ul>
             <Dropdown />
