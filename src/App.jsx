@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from "./components/Navbar"
 import City from "./components/City";
 import CoOrdinates from "./components/CoOrdinates";
@@ -8,20 +8,19 @@ import MyLocation from "./components/MyLocation";
 import './App.css'
 import WeatherLog from "./components/WeatherLog";
 
-const router = createBrowserRouter(
-  [
-    { path: "/WeatherInfo/", element: <Home /> },
-    { path: "/WeatherInfo/mylocation", element: <MyLocation /> },
-    { path: "/WeatherInfo/city", element: <City /> },
-    { path: "/WeatherInfo/coordinates", element: <CoOrdinates /> },
-    { path: "/WeatherInfo/weatherlogs", element: <WeatherLog /> },
-  ]
-)
 function App() {
   return (
     <>
+      <BrowserRouter>
       <Navbar />
-      <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mylocation" element={<MyLocation />} />
+          <Route path="/city" element={<City />} />
+          <Route path="/coordinates" element={<CoOrdinates />} />
+          <Route path="/weatherlogs" element={<WeatherLog />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

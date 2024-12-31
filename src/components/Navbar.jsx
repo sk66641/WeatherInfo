@@ -1,6 +1,7 @@
 import React from 'react'
 import LiveClock from './LiveClock'
 import Dropdown from './Dropdown'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -10,12 +11,12 @@ const Navbar = () => {
                 <span className='text-white text-xl font-serif font-bold'>WeatherInfo</span>
             </div>
             <ul className='navbar flex gap-4 text-black md:'>
-                <li><a className='hover:font-semibold' href="/WeatherInfo/">Home</a></li>
-                <li><a className='hover:font-semibold' href="/WeatherInfo/mylocation">My Location</a></li>
-                <li><a className='hover:font-semibold' href="/WeatherInfo/city">City</a></li>
-                <li><a className='hover:font-semibold' href="/WeatherInfo/coordinates">Co-odinates</a></li>
-                <li><a className='hover:font-semibold' href="/WeatherInfo/weatherlogs">Weather logs</a></li>
-                <li><a className='hover:font-semibold' href="https://github.com/sk66641">About Us</a></li>
+                <li><Link className='hover:font-semibold' to="/">Home</Link></li>
+                <li><Link className='hover:font-semibold' to="/mylocation">My Location</Link></li>
+                <li><Link className='hover:font-semibold' to="/city">City</Link></li>
+                <li><Link className='hover:font-semibold' to="/coordinates">Co-odinates</Link></li>
+                <li><Link className='hover:font-semibold' to="/weatherlogs">Weather logs</Link></li>
+                <li><Link className='hover:font-semibold' to="https://github.com/sk66641">About Us</Link></li>
             </ul>
             <Dropdown />
         </nav>
