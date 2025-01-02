@@ -20,13 +20,13 @@ const Topbuttons = (props) => {
         }
     ]
     return (
-        <div className='flex items-center justify-around my-6'>
+        <div className='flex items-center flex-wrap justify-around my-6'>
             <BiCurrentLocation onClick={props.askUser}
                 size={25}
                 className="cursor-pointer transition ease-out hover:scale-125"
             />
             {cities.map((city) => (
-                <button key={city.id} className='text-lg font-medium hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in'>
+                <button key={city.id} className='text-lg font-medium text-center hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in'>
                     {city.name}
                 </button>
             ))}

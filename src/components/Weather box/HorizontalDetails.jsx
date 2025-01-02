@@ -61,9 +61,9 @@ const HorizontalDetails = (props) => {
 
     return (
         <div className="py-3">
-            <div className="flex flex-row items-center justify-center gap-10 text-sm py-3">
+            <div className="flex flex-wrap text-wrap text-center flex-row items-center justify-center gap-10 text-sm py-3">
                 {HorizontalDetails.filter((item) => (item.id <= 4)).map(({ id, Icon, title, value }) => (
-                    <div key={id} className="flex flex-row items-center justify-center">
+                    <div key={id} className="flex flex-wrap text-wrap flex-row items-center justify-center">
                         <Icon size={30} />
                         <p className="font-light ml-1">
                             {`${title}: `}
@@ -72,9 +72,9 @@ const HorizontalDetails = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="flex flex-row items-center justify-center gap-10 text-sm mt-6">
+            <div className="flex flex-wrap text-wrap text-center flex-row items-center justify-center gap-10 text-sm mt-6">
                 {HorizontalDetails.filter((item) => (item.id > 4)).map(({ id, Icon, title, value }) => (
-                    <div key={id} className="flex flex-row items-center justify-center">
+                    <div key={id} className="flex flex-wrap text-wrap flex-row items-center justify-center">
                         <Icon size={30} />
                         <p className="font-light ml-1">
                             {`${title}: `}

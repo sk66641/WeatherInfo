@@ -135,9 +135,10 @@ const Home = () => {
 
     return (
         <>
-            {error !== null && (<div className='flex justify-center items-center text-lg h-20 font-medium text-center min-w-[675px]'>
+            {error !== null && (<div className='flex justify-center items-center text-lg h-20 font-medium text-center 
+            '>
                 {error}</div>)}
-            <div className='flex justify-center min-w-[675px] px-3 mt-24'>
+            <div className='flex justify-center px-3 mt-24 min-w-[430px]'>
                 {CurrentWeather.main && (
                     <MainComp weather={CurrentWeather} showWeatherCity={showWeatherCity} askUser={askUser} />
                 )}

@@ -10,13 +10,13 @@ const InputDetails = (props) => {
     setform({ ...form, [event.target.name]: event.target.value })
   }
   return (
-    <div className="flex flex-row justify-center my-6 ">
-      <div className="flex flex-row w-3/4 items-center justify-around">
+    <div className="flex flex-row flex-wrap text-wrap justify-center my-6 gap-3">
+      <div className="flex flex-row w-3/4 items-center justify-around bg-white rounded-xl">
         <input
           type="text"
           value={form.city} name='city' onChange={handleChange}
           placeholder="search by city..."
-          className="text-gray-500 text-xl font-light p-2 w-3/4 shadow-xl capitalize focus:outline-none placeholder:lowercase rounded-xl"
+          className="text-gray-500 text-xl font-light p-2 w-3/4 capitalize focus:outline-none placeholder:lowercase bg-transparent"
         />
         <BiSearch onClick={props.show}
           size={30}
@@ -24,7 +24,7 @@ const InputDetails = (props) => {
         />
       </div>
 
-      <div className="flex flex-row w-1/4 items-center justify-center">
+      <div className="flex flex-row w-1/5 items-center justify-center">
         <button onClick={() => setChangeTempUnit(false)} className="text-2xl font-medium transition ease-out hover:scale-125">
           °C
         </button>
