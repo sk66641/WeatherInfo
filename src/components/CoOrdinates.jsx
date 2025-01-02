@@ -62,7 +62,7 @@ const CoOrdinates = () => {
 
     return (
         <>
-            <p className='flex justify-center pt-3 font-medium items-center text-center min-w-96 px-2'>Here, you can search weather details using co-ordinates.</p>
+            <p className='flex justify-center pt-3 font-medium items-center text-center min-w-96 px-8'>Here, you can search weather details using co-ordinates.</p>
             <div className='flex justify-center items-center p-3 text-center flex-wrap min-w-96 gap-2'>
                 <input value={form.lat} name='lat' onChange={handleChange} className='border border-black rounded-md p-1' type="number" placeholder='Enter lattitude' />
                 <input value={form.lon} name='lon' onChange={handleChange} className='border border-black rounded-md p-1' type="number" placeholder='Enter longitude' />
