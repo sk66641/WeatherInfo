@@ -29,7 +29,7 @@ const TempAndDetails = (props) => {
     return (
         <div>
             <div className="flex flex-wrap text-wrap items-center justify-center text-center text-xl font-light">
-                <p>{props.weather.weather[0].main}</p>
+                <p className="capitalize">{props.weather.weather[0].description}</p>
             </div>
 
             <div className="flex flex-wrap text-wrap text-center flex-row items-center justify-between py-6">
