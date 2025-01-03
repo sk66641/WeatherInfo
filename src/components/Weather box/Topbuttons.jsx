@@ -1,5 +1,6 @@
 import { BiCurrentLocation } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
+// import { loadOptions } from '../search/search'
 const Topbuttons = (props) => {
     const [searchedCityList, setSearchedCityList] = useState(["London","Berlin","Moscow", "Delhi"])
 

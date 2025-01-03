@@ -38,7 +38,7 @@ const MainComp = (props) => {
     <div className={`py-5 px-20 rounded-xl shadow-xl shadow-gray-500 mb-9 ${getWeatherStyle().bg} ${getWeatherStyle().text}`}>
       <ContextTempUnit.Provider value={{ changeTempUnit, setChangeTempUnit }}>
         <Topbuttons weather={props.weather} askUser={props.askUser} getWeatherCity={props.getWeatherCity} />
-        <InputDetails weather={props.weather} show={props.showWeatherCity} />
+        <InputDetails weather={props.weather} show={props.showWeatherCity} getWeather={props.getWeather}/>
         <TimeAndLocation weather={props.weather} />
         <TempAndDetails weather={props.weather} />
         <HorizontalDetails weather={props.weather} />

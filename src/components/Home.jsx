@@ -143,7 +143,7 @@ const Home = () => {
                 {error}</div>)} */}
             <div className='flex justify-center px-3 mt-24 min-w-[430px]'>
                 {CurrentWeather.main && (
-                    <MainComp weather={CurrentWeather} showWeatherCity={showWeatherCity} askUser={askUser} getWeatherCity={getWeatherCity} />
+                    <MainComp weather={CurrentWeather} showWeatherCity={showWeatherCity} askUser={askUser} getWeatherCity={getWeatherCity} getWeather={getWeather}/>
                 )}
             </div>
             {/* {!CurrentWeather.main && error === null && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>} */}
