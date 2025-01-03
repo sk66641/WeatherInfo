@@ -1,6 +1,7 @@
 /* to avoid fixed position of navbar */
 body{
-    margin-top: 72px;      
+    margin-top: 72px;
+    background: linear-gradient(to bottom right, #e0f7fa, #f0fdfa, #e3f2fd);
 }
 
 /* Co-ordinates page */

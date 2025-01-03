@@ -28,7 +28,7 @@ const TempAndDetails = (props) => {
 
     return (
         <div>
-            <div className="flex flex-wrap text-wrap items-center justify-center text-center text-xl font-light text-gray-300">
+            <div className="flex flex-wrap text-wrap items-center justify-center text-center text-xl font-light">
                 <p>{props.weather.weather[0].main}</p>
             </div>
 
@@ -48,8 +48,11 @@ const TempAndDetails = (props) => {
                             key={id}
                             className="flex flex-wrap text-wrap text-center font-light text-sm items-center justify-center"
                         >
-                            <Icon size={18} className="mr-1" />
-                            {title}: <span className="font-medium ml-1">{value}</span>
+                            <Icon size={18} />
+                            <p className="font-light ml-1">
+                            {`${title}: `}
+                            <span className="font-medium ml-1">{value}</span>
+                        </p>
                         </div>
                     ))}
                 </div>

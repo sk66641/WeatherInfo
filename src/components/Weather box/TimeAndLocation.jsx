@@ -1,5 +1,6 @@
 import React from 'react'
 import { convertTimezone, convertUnixToTime } from '../Home'
+import { TbWorldLatitude, TbWorldLongitude } from 'react-icons/tb'
 
 const TimeAndLocation = (props) => {
     return (
@@ -12,7 +13,7 @@ const TimeAndLocation = (props) => {
 
             <div className="flex flex-wrap text-wrap text-center flex-col items-center justify-center my-3">
                 <p className="text-3xl font-medium">{props.weather.name}, {props.weather.sys.country}</p>
-                <p>Lat: {props.weather.coord.lat}, Lon: {props.weather.coord.lon}</p>
+                <p className='flex justify-center items-center text-center'><TbWorldLatitude className='mr-1' /> {props.weather.coord.lat},  <TbWorldLongitude className='mr-1 ml-1'/> {props.weather.coord.lon}</p>
             </div>
         </div>
     )

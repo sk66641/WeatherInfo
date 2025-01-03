@@ -53,7 +53,7 @@ export const formatVisibility = (visibility) => {
 
 const Home = () => {
     const [CurrentWeather, setCurrentWeather] = useState({})
-    const [error, setError] = useState(null)
+    // const [error, setError] = useState(null)
     const { form, setform } = useContext(ContextFormCity)
 
     const getWeather = async (lat, lon) => {
@@ -68,11 +68,11 @@ const Home = () => {
             }
 
             const data = await res.json()
-            console.log("data", data)
+            // console.log("data", data)
             setCurrentWeather(data)
 
         } catch (error) {
-            setError(`${error.message}`)
+            // setError(`${error.message}`)
             alert(`${error.message}`)  // Catch both network and API errors
         }
     }
@@ -83,9 +83,9 @@ const Home = () => {
             navigator.geolocation.getCurrentPosition((position) => {
                 const { latitude, longitude } = position.coords
                 getWeather(latitude, longitude)
-                setError(null)
+                // setError(null)
             }, (error) => {
-                setError(error.message)
+                // setError(error.message)
                 alert(error.message)
             })
             return;
@@ -98,6 +98,7 @@ const Home = () => {
     }, [])
 
     const getWeatherCity = async (city) => {
+
         try {
             const API_KEY = import.meta.env.VITE_API_KEY
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
@@ -109,10 +110,11 @@ const Home = () => {
             }
 
             const data = await res.json()
-            console.log("data", data)
+
+            // console.log("data", data)
             setCurrentWeather(data)
         } catch (error) {
-            setError(`${error.message}`)
+            // setError(`${error.message}`)
             alert(`${error.message}`)  // Catch both network and API errors
         }
     }
@@ -122,28 +124,30 @@ const Home = () => {
             alert('all fields required!')
             return;
         }
+        
         getWeatherCity(form.city)
         setform({ city: "" })
-        setError(null)
+        // setError(null)
     }
 
-    useEffect(() => {
-        if (error !== null) {
-            setCurrentWeather({})
-        }
-    }, [error])
+    // useEffect(() => {
+    //     if (error !== null) {
+    //         setCurrentWeather({})
+    //     }
+    // }, [error])
 
     return (
         <>
-            {error !== null && (<div className='flex justify-center items-center text-lg h-20 font-medium text-center 
+            {/* {error !== null && (<div className='flex justify-center items-center text-lg h-20 font-medium text-center 
             '>
-                {error}</div>)}
+                {error}</div>)} */}
             <div className='flex justify-center px-3 mt-24 min-w-[430px]'>
                 {CurrentWeather.main && (
-                    <MainComp weather={CurrentWeather} showWeatherCity={showWeatherCity} askUser={askUser} />
+                    <MainComp weather={CurrentWeather} showWeatherCity={showWeatherCity} askUser={askUser} getWeatherCity={getWeatherCity} />
                 )}
             </div>
-            {!CurrentWeather.main && error === null && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>}
+            {/* {!CurrentWeather.main && error === null && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>} */}
+            {!CurrentWeather.main && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>}
         </>
 
     )

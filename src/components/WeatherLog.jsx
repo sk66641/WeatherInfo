@@ -95,7 +95,7 @@ const WeatherLog = () => {
       const updatedWeatherList = weatherList.filter(item => item.main.temp !== temp);
       setWeatherList(updatedWeatherList);
       localStorage.setItem('weatherList', JSON.stringify(updatedWeatherList));
-      toast.warn('There is no data to be deleted!', {
+      toast.warn('Data deleted successfully!', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -158,7 +158,7 @@ const WeatherLog = () => {
         theme="dark"
         transition={Bounce}
       />
-      <p className='flex justify-center pt-3 items-center text-center min-w-96 px-8 font-medium'>Here, you can log weather details for multiple entries through coordinate-based searches.</p>
+      <p className='flex justify-center pt-3 items-center text-center min-w-96 px-2 font-medium'>Here, you can log weather details for multiple entries through coordinate-based searches.</p>
       <div className='flex justify-center items-center text-center flex-wrap min-w-96 p-3 gap-2'>
         <input value={form.lat} name='lat' onChange={handleChange} className='border border-black rounded-md p-1' type="number" placeholder='Enter lattitude' />
         <input value={form.lon} name='lon' onChange={handleChange} className='border border-black rounded-md p-1' type="number" placeholder='Enter longitude' />

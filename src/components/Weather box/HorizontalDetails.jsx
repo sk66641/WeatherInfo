@@ -49,7 +49,8 @@ const HorizontalDetails = (props) => {
             id: 7,
             Icon: FiWind,
             title: "Wind Gust",
-            value: `${(props.weather.wind.gust * 3.6).toFixed(2)} km/h`,
+            value: `${props.weather.wind.gust ? (props.weather.wind.gust * 3.6).toFixed(2) + " km/h" : "NA"}`
+
         },
         {
             id: 8,

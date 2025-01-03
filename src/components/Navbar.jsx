@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className='bg-orange-500 py-3 min-w-96 flex w-full justify-between items-center content-center px-5 gap-9 fixed top-0'>
+        <nav className='bg-gradient-to-br from-purple-500 to-indigo-700  py-3 min-w-96 flex w-full justify-between items-center content-center px-5 gap-9 fixed top-0 shadow-xl shadow-gray-400 text-purple-100 z-[10]'>
             <div className='navTitle flex items-center gap-9 flex-wrap'>
                 <LiveClock />
                 <span className='text-white text-xl font-serif font-bold'>WeatherInfo</span>
