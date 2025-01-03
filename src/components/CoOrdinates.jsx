@@ -22,7 +22,7 @@ const CoOrdinates = () => {
                 throw new Error(errorData.message)
             }
             const data = await res.json()
-            console.log("data", data)
+            // console.log("data", data)
             setCurrentWeather(data)
         } catch (error) {
             setError(`${error.message}`)

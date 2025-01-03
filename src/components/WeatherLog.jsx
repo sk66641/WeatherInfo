@@ -43,7 +43,7 @@ const WeatherLog = () => {
 
   useEffect(() => {
     if (weatherList.length > 0) {
-      console.log("weatherList", weatherList)
+      // console.log("weatherList", weatherList)
       localStorage.setItem('weatherList', JSON.stringify(weatherList))
     }
   }, [weatherList])
