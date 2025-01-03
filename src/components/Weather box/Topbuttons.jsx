@@ -53,7 +53,7 @@ const Topbuttons = (props) => {
                     props.getWeatherCity(city.name);
                 }
 
-                } className='text-lg font-medium text-center hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in'>
+                } className='text-lg font-medium text-center hover:font-bold px-3 py-2 rounded-md transition ease-in'>
                     {city.name}
                 </button>
             ))}
