@@ -1,7 +1,7 @@
 import { BiCurrentLocation } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
 const Topbuttons = (props) => {
-    const [searchedCityList, setSearchedCityList] = useState([])
+    const [searchedCityList, setSearchedCityList] = useState(["London","Berlin","Moscow", "Delhi"])
 
     useEffect(() => {
         if (props.weather.name) {
@@ -24,19 +24,19 @@ const Topbuttons = (props) => {
     const cities = [
         {
             id: 1,
-            name: searchedCityList[0] || "London"
+            name: searchedCityList[0]
         },
         {
             id: 2,
-            name: searchedCityList[1] || "Berlin"
+            name: searchedCityList[1]
         },
         {
             id: 3,
-            name: searchedCityList[2] || "Moscow"
+            name: searchedCityList[2]
         },
         {
             id: 4,
-            name: searchedCityList[3] || "Delhi"
+            name: searchedCityList[3]
         }
     ]
 
