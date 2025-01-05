@@ -1,8 +1,13 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "./api";
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../redux/location/location";
 
 const Search = ({ onSearchChange }) => {
+
+    const dispatch = useDispatch();
+
     const loadOptions = async (inputValue) => {
         return await fetch(
             `${GEO_API_URL}/cities?namePrefix=${inputValue}`,
@@ -16,32 +21,43 @@ const Search = ({ onSearchChange }) => {
                             lat: `${city.latitude}`,
                             lon: `${city.longitude}`,
                             label: `${city.name}, ${city.region}, ${city.countryCode}`,
+                            city: `${city.name}`,
+                            region: `${city.region}`,
+                            countryCode: `${city.countryCode}`,
                         };
                     }),
                 };
             });
     };
-    const [search, setSearch] = useState(null);
 
-    const handleOnChange = (searchData) => {
-        // setSearch(searchData);
+    // const handleOnChangeagain = (searchData) => {
+    //     return new Promise((resolve) => {
+    //         dispatch(setSearch(searchData));
+    //         resolve();
+    //     });
+    // };
+
+    const handleOnChange = async (searchData) => {
+        // handleOnChangeagain(searchData).then(() => {
         onSearchChange(searchData);
+        // dispatch(setSearch())
+        // Additional actions can be performed here after onSearchChange is resolved
+        // });
     };
 
     return (
         <AsyncPaginate
-
             placeholder="Search for city"
             debounceTimeout={600}
-            value={search}
+            value={""}
             onChange={handleOnChange}
             loadOptions={loadOptions}
             styles={{
                 control: (base) => ({
                     ...base,
-                    border: "none", // Remove default border
-                    boxShadow: "none", // Remove default box shadow
-                    borderRadius: "0.75rem", // Tailwind equivalent: `rounded-xl`
+                    border: "none",
+                    boxShadow: "none",
+                    borderRadius: "0.75rem",
                 }),
             }}
             className="text-gray-500 text-xl font-light w-3/4"
