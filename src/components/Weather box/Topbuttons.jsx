@@ -51,6 +51,13 @@ const Topbuttons = (props) => {
             setSearchedCityList(JSON.parse(getLocalStorage))
         }
     }, [])
+
+    useEffect(() => {
+        if (searchedCityList.length > 0) {
+            localStorage.setItem('searchedCityList', JSON.stringify(searchedCityList))
+        }
+    }, [searchedCityList])
+
     useEffect(() => {
         // why if condition? because there could be a case when name is empty in openweather api response for user location 
         if (props.weather.name) {
@@ -64,11 +71,6 @@ const Topbuttons = (props) => {
             });
         }
     }, [props.weather.name]);
-    useEffect(() => {
-        if (searchedCityList.length > 0) {
-            localStorage.setItem('searchedCityList', JSON.stringify(searchedCityList))
-        }
-    }, [searchedCityList])
 
 
     const cities = [
