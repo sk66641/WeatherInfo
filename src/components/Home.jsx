@@ -31,6 +31,7 @@ export const convertUnixToDate = (unixTimestamp, timezoneOffset) => {
     return localDateTime.toFormat('EEE, dd MMM yyyy');
 };
 
+
 export const convertWindDirection = (deg) => {
     const directions = [
         "North", "North-NE", "Northeast", "East-NE",
@@ -56,7 +57,7 @@ const Home = () => {
     const [weatherForecast, setWeatherForest] = useState({});
     const [fixCurrenWeather, setFixCurrentWeather] = useState({});
     const [locationCheck, setLocationCheck] = useState(false)
-    console.log(CurrentWeather)
+    // console.log(CurrentWeather)
     // console.log(locationCheck)
     // const { form, setform } = useContext(ContextFormCity);
     // const search = useSelector((state) => state.location);
