@@ -41,6 +41,7 @@ const Home = () => {
                 const { latitude, longitude } = position.coords;
                 getWeather(latitude, longitude);
             }, (error) => {
+                console.log(error)
                 alert(error.message);
             });
             return;
@@ -56,7 +57,7 @@ const Home = () => {
         <>
             <div className='flex justify-center px-3 mt-24 min-w-[430px]'>
                 {CurrentWeather.main && (
-                    <MainComp weather={CurrentWeather} askUser={askUser} getWeather={getWeather} forecast={weatherForecast} />
+                    <MainComp CurrentWeather={CurrentWeather} askUser={askUser} getWeather={getWeather} weatherForecast={weatherForecast} />
                 )}
             </div>
             {!CurrentWeather.main && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>}

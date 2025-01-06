@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { ContextTempUnit } from '../../context/context';
 import Search from './search';
 
-const InputDetails = (props) => {
+const InputDetails = ({CurrentWeather, getWeather}) => {
   const { setChangeTempUnit } = useContext(ContextTempUnit);
 
   const handleOnSearchChange = async (searchData) => {
-    props.getWeather(searchData.lat, searchData.lon, searchData);
+    getWeather(searchData.lat, searchData.lon, searchData);
   };
 
   return (

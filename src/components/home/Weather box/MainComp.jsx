@@ -7,7 +7,7 @@ import HorizontalDetails from './HorizontalDetails';
 import { ContextTempUnit } from '../../context/context';
 import Forecast from '../../forecast/Forecast';
 
-const MainComp = (props) => {
+const MainComp = ({CurrentWeather, askUser, getWeather, weatherForecast}) => {
   const [changeTempUnit, setChangeTempUnit] = useState(false);
 
   const weatherStyles = {
@@ -31,7 +31,7 @@ const MainComp = (props) => {
   };
 
   const getWeatherStyle = () => {
-    const icon = props.weather.weather[0].icon;
+    const icon = CurrentWeather.weather[0].icon;
     return weatherStyles[icon] || { bg: "bg-gradient-to-br from-gray-200 to-gray-400", text: "text-black" };
   };
 
@@ -39,13 +39,13 @@ const MainComp = (props) => {
     <div className='flex flex-col justify-center items-center'>
       <ContextTempUnit.Provider value={{ changeTempUnit, setChangeTempUnit }}>
         <div className={`py-5 px-20 rounded-xl shadow-xl shadow-gray-500 mb-9 ${getWeatherStyle().bg} ${getWeatherStyle().text}`}>
-          <Topbuttons weather={props.weather} askUser={props.askUser} getWeather={props.getWeather} />
-          <InputDetails weather={props.weather} getWeather={props.getWeather} />
-          <TimeAndLocation weather={props.weather} locationCheck={props.locationCheck} />
-          <TempAndDetails weather={props.weather} />
-          <HorizontalDetails weather={props.weather} />
+          <Topbuttons CurrentWeather={CurrentWeather} askUser={askUser} getWeather={getWeather} />
+          <InputDetails CurrentWeather={CurrentWeather} getWeather={getWeather} />
+          <TimeAndLocation CurrentWeather={CurrentWeather} />
+          <TempAndDetails CurrentWeather={CurrentWeather} />
+          <HorizontalDetails CurrentWeather={CurrentWeather} />
         </div>
-        <Forecast forecast={props.forecast} getWeatherStyle={getWeatherStyle} />
+        <Forecast weatherForecast={weatherForecast} getWeatherStyle={getWeatherStyle} />
       </ContextTempUnit.Provider>
     </div>
   );

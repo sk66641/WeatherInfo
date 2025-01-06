@@ -1,7 +1,7 @@
 import { BiCurrentLocation } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
 
-const Topbuttons = (props) => {
+const Topbuttons = ({ CurrentWeather, askUser, getWeather }) => {
     const [searchedCityList, setSearchedCityList] = useState([
         {
 
@@ -59,17 +59,17 @@ const Topbuttons = (props) => {
 
     useEffect(() => {
         // why if condition? because there could be a case when name is empty in openweather api response for user location 
-        if (props.weather.name) {
+        if (CurrentWeather.name) {
             setSearchedCityList((prevSearchedCityList) => {
                 // Remove duplicates and add the new city to the top
                 const filteredList = prevSearchedCityList.filter(
-                    (city) => city.city !== props.weather.name
+                    (city) => city.city !== CurrentWeather.name
                 );
-                const updatedList = [{ label: props.weather.label, city: props.weather.name, lat: props.weather.coord.lat, lon: props.weather.coord.lon, region: props.weather.region, countryCode: props.weather.sys.country }, ...filteredList]; // adding the new city to the start of the list
+                const updatedList = [{ label: CurrentWeather.label, city: CurrentWeather.name, lat: CurrentWeather.coord.lat, lon: CurrentWeather.coord.lon, region: CurrentWeather.region, countryCode: CurrentWeather.sys.country }, ...filteredList]; // adding the new city to the start of the list
                 return updatedList.slice(0, 4); // Keep the list size to a max of 5
             });
         }
-    }, [props.weather.name]);
+    }, [CurrentWeather.name]);
 
 
     const cities = [
@@ -103,13 +103,13 @@ const Topbuttons = (props) => {
 
     return (
         <div className='flex items-center flex-wrap justify-around my-6'>
-            <BiCurrentLocation onClick={props.askUser}
+            <BiCurrentLocation onClick={askUser}
                 size={25}
                 className="cursor-pointer transition ease-out hover:scale-125"
             />
             {cities.map((city) => (
                 <button key={city.id} onClick={() => {
-                    props.getWeather(city.lat, city.lon, searchedCityList[city.id - 1]);
+                    getWeather(city.lat, city.lon, searchedCityList[city.id - 1]);
                     // console.log()
                 }
 

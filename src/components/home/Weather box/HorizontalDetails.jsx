@@ -5,57 +5,57 @@ import { MdVisibility } from "react-icons/md";
 import { WiBarometer, WiSunrise, WiSunset, WiWindy } from 'react-icons/wi';
 import { convertUnit, convertWindDirection, formatVisibility, convertUnixToString } from '../../FunctionStore';
 
-const HorizontalDetails = (props) => {
+const HorizontalDetails = ({CurrentWeather}) => {
 
     const HorizontalDetails = [
         {
             id: 1,
             Icon: CgArrowUp,
             title: "Max Temp",
-            value: convertUnit(props.weather.main.temp_max),
+            value: convertUnit(CurrentWeather.main.temp_max),
         },
         {
             id: 2,
             Icon: CgArrowDown,
             title: "Min Temp",
-            value: convertUnit(props.weather.main.temp_min),
+            value: convertUnit(CurrentWeather.main.temp_min),
         },
         {
             id: 3,
             Icon: WiSunrise,
             title: "Sunrise",
-            value: convertUnixToString(props.weather.sys.sunrise, props.weather.timezone),
+            value: convertUnixToString(CurrentWeather.sys.sunrise, CurrentWeather.timezone),
         },
         {
             id: 4,
             Icon: WiSunset,
             title: "Sunset",
-            value: convertUnixToString(props.weather.sys.sunset, props.weather.timezone),
+            value: convertUnixToString(CurrentWeather.sys.sunset, CurrentWeather.timezone),
         },
         {
             id: 5,
             Icon: WiBarometer,
             title: "Pressure",
-            value: props.weather.main.pressure + " hPa",
+            value: CurrentWeather.main.pressure + " hPa",
         },
         {
             id: 6,
             Icon: WiWindy,
             title: "Wind Direction",
-            value: convertWindDirection(props.weather.wind.deg),
+            value: convertWindDirection(CurrentWeather.wind.deg),
         },
         {
             id: 7,
             Icon: FiWind,
             title: "Wind Gust",
-            value: `${props.weather.wind.gust ? (props.weather.wind.gust * 3.6).toFixed(2) + " km/h" : "NA"}`
+            value: `${CurrentWeather.wind.gust ? (CurrentWeather.wind.gust * 3.6).toFixed(2) + " km/h" : "NA"}`
 
         },
         {
             id: 8,
             Icon: MdVisibility,
             title: "Visibility",
-            value: formatVisibility(props.weather.visibility),
+            value: formatVisibility(CurrentWeather.visibility),
         },
     ];
 

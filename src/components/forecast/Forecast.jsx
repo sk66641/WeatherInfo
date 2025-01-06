@@ -4,7 +4,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import { MdArrowDropDown } from 'react-icons/md'
 import { convertUnit, convertUnixToDate, convertUnixToString } from '../FunctionStore'
 
-const Forecast = ({ forecast, getWeatherStyle }) => {
+const Forecast = ({ weatherForecast, getWeatherStyle }) => {
 
 
     /* 
@@ -28,14 +28,14 @@ const Forecast = ({ forecast, getWeatherStyle }) => {
             return accumulator;
         }, {});
     };
-    // { forecast.list && console.log(forecast) }
-    // { forecast.list && console.log(Object.entries(groupByTimestamp(forecast.list, forecast.city.timezone))) }
+    // { weatherForecast.list && console.log(weatherForecast) }
+    // { weatherForecast.list && console.log(Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone))) }
     return (
 
         <div className='flex justify-center mb-6'>
             <Accordion allowZeroExpanded className='w-[786px] max-md:w-[400px] shadow-xl shadow-gray-500 rounded-xl'>
-                {forecast.list &&
-                    Object.entries(groupByTimestamp(forecast.list, forecast.city.timezone)).map(([date, items], index) => (
+                {weatherForecast.list &&
+                    Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone)).map(([date, items], index) => (
                         <AccordionItem key={index} >
                             <AccordionItemHeading>
                                 <AccordionItemButton className={`${getWeatherStyle().bg} ${getWeatherStyle().text} font-bold py-2 px-4 flex justify-between items-center rounded-xl m-2 transition ease-in-out`}>
