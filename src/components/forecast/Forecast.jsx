@@ -4,6 +4,7 @@ import { convertUnixToTime } from '../Home'
 import { convertUnixToDate } from '../Home'
 import { Accordion, AccordionItemHeading, AccordionItem, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/fancy-example.css';
+import { MdArrowDropDown } from 'react-icons/md'
 // import { ContextTempUnit } from '../context/context'
 const Forecast = ({ forecast, getWeatherStyle }) => {
 
@@ -71,10 +72,11 @@ const Forecast = ({ forecast, getWeatherStyle }) => {
                     Object.entries(groupByTimestamp(forecast.list, forecast.city.timezone)).map(([date, items], index) => (
                         <AccordionItem key={index} >
                             <AccordionItemHeading>
-                                <AccordionItemButton className={`${getWeatherStyle().bg} ${getWeatherStyle().text} font-bold py-2 px-4 rounded-xl m-2 transition ease-in-out`}>
+                                <AccordionItemButton className={`${getWeatherStyle().bg} ${getWeatherStyle().text} font-bold py-2 px-4 flex justify-between items-center rounded-xl m-2 transition ease-in-out`}>
 
                                     {/* <div className='w-[500px]'> */}
                                     {date}
+                                    <MdArrowDropDown/>
                                     {/* </div> */}
                                 </AccordionItemButton>
                             </AccordionItemHeading>
