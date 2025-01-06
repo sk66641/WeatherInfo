@@ -6,9 +6,6 @@ import MainComp from './Weather box/MainComp'
 import { ContextTempUnit } from './context/context'
 import { ContextFormCity } from './context/context'
 
-export const fixTo0 = (value) => {
-    return value.toFixed(0);
-}
 export const convertToF = (celsius) => {
     return (celsius * 9 / 5) + 32;
 }
@@ -124,7 +121,7 @@ const Home = () => {
             alert('all fields required!')
             return;
         }
-        
+
         getWeatherCity(form.city)
         setform({ city: "" })
         // setError(null)
