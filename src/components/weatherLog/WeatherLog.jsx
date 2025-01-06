@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Popup from 'reactjs-popup';
-import Loading from './Loading';
+import Loading from '../Loading';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { convertUnixToTime } from './Home';
-import { convertTimezone } from './Home';
-import { formatVisibility } from './Home';
-import { convertWindDirection } from './Home';
+import { convertTimezone, convertUnixToTime, formatVisibility, convertWindDirection } from '../FunctionStore';
 
 const WeatherLog = () => {
   const [weatherList, setWeatherList] = useState([]) // weatherList is an array

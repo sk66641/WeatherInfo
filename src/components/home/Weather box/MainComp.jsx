@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Topbuttons from './Topbuttons';
-import InputDetails from './InputDetails';
+import InputDetails from '../search/InputDetails';
 import TimeAndLocation from './TimeAndLocation';
 import TempAndDetails from './TempAndDetails';
 import HorizontalDetails from './HorizontalDetails';
-import { ContextTempUnit } from '../context/context';
-import Forecast from '../forecast/Forecast';
+import { ContextTempUnit } from '../../context/context';
+import Forecast from '../../forecast/Forecast';
 
 const MainComp = (props) => {
   const [changeTempUnit, setChangeTempUnit] = useState(false);

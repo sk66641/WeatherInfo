@@ -1,7 +1,7 @@
 import { FaThermometerEmpty } from "react-icons/fa";
 import { BiSolidDropletHalf } from "react-icons/bi";
 import { FiWind } from "react-icons/fi";
-import { convertUnit } from "../Home";
+import { convertUnit } from "../../FunctionStore";
 const TempAndDetails = (props) => {
 
     const verticalDetails = [

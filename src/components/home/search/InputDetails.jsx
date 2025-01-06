@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ContextTempUnit } from '../context/context';
-import Search from '../search/search';
+import { ContextTempUnit } from '../../context/context';
+import Search from './search';
 
 const InputDetails = (props) => {
   const { setChangeTempUnit } = useContext(ContextTempUnit);

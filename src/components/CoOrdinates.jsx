@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Loading from './Loading'
-import { convertUnixToTime } from './Home'
-import { convertTimezone } from './Home'
-import { convertWindDirection } from './Home'
-import { formatVisibility } from './Home'
+import { convertUnixToTime, convertTimezone, convertWindDirection, formatVisibility } from './FunctionStore'
 
 const CoOrdinates = () => {
 

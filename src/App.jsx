@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import CoOrdinates from "./components/CoOrdinates";
-import Home from './components/Home';
+import Home from "./components/home/Home";
+import WeatherLog from "./components/weatherLog/WeatherLog";
 import './App.css';
-import WeatherLog from "./components/WeatherLog";
 
 function App() {
-  const [form, setForm] = useState({ city: "" });
 
   return (
     <BrowserRouter>

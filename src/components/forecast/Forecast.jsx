@@ -1,9 +1,8 @@
 import React from 'react'
-import { convertUnit, convertUnixToString } from '../Home'
-import { convertUnixToDate } from '../Home'
 import { Accordion, AccordionItemHeading, AccordionItem, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { MdArrowDropDown } from 'react-icons/md'
+import { convertUnit, convertUnixToDate, convertUnixToString } from '../FunctionStore'
 
 const Forecast = ({ forecast, getWeatherStyle }) => {
 

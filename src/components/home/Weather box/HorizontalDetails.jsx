@@ -3,8 +3,7 @@ import { CgArrowDown, CgArrowUp } from 'react-icons/cg';
 import { FiWind } from 'react-icons/fi';
 import { MdVisibility } from "react-icons/md";
 import { WiBarometer, WiSunrise, WiSunset, WiWindy } from 'react-icons/wi';
-import { convertUnit, convertWindDirection, formatVisibility } from '../Home';
-import { convertUnixToString } from '../Home';
+import { convertUnit, convertWindDirection, formatVisibility, convertUnixToString } from '../../FunctionStore';
 
 const HorizontalDetails = (props) => {
 

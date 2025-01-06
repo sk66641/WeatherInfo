@@ -1,6 +1,6 @@
 import React from 'react'
 import LiveClock from './LiveClock'
-import Dropdown from './Dropdown'
+import Dropdown from './weatherLog/Dropdown'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {

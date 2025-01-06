@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertTimezone, convertUnixToTime } from '../Home';
+import { convertTimezone, convertUnixToTime } from '../../FunctionStore';
 import { TbWorldLatitude, TbWorldLongitude } from 'react-icons/tb';
 
 const TimeAndLocation = (props) => {
