@@ -1,6 +1,6 @@
 # WeatherInfo
 
-## How It Works
+### How It Works
 
 1. The application requests permission from the user to access their location coordinates using `navigator.geolocation`.
 2. These coordinates are passed to the OpenWeather API to fetch weather data, which is then displayed to the user.
