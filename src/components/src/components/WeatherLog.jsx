@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Popup from 'reactjs-popup';
-import Loading from '../Loading';
+import Loading from './Loading';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { convertTimezone, convertUnixToTime, formatVisibility, convertWindDirection } from '../FunctionStore';
+import { convertUnixToTime } from './Home';
+import { convertTimezone } from './Home';
+import { formatVisibility } from './Home';
+import { convertWindDirection } from './Home';
 
 const WeatherLog = () => {
   const [weatherList, setWeatherList] = useState([]) // weatherList is an array
@@ -46,7 +49,7 @@ const WeatherLog = () => {
   }, [weatherList])
 
 
-  // Related concept here: file:///home/sanu/Documents/Web%20Deployment/WeatherInfo/async_react.md
+  // Related concept here: file:///home/sanu/Documents/Web%20Deployment/weather-web/weather%20web/public/async_react.md
 
   const showWeather = () => {
     if (form.lat === "" || form.lon === "") {
@@ -74,6 +77,11 @@ const WeatherLog = () => {
     setform({ lat: "", lon: "" })
     setCurrentWeather({})
     setError("")
+  }
+
+  const getTimeStamp = (event) => {
+    let currentDate = new Date(event * 1000);
+    return currentDate.toTimeString();
   }
 
   const handleChange = (event) => {

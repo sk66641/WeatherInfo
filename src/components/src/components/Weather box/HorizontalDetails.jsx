@@ -3,65 +3,60 @@ import { CgArrowDown, CgArrowUp } from 'react-icons/cg';
 import { FiWind } from 'react-icons/fi';
 import { MdVisibility } from "react-icons/md";
 import { WiBarometer, WiSunrise, WiSunset, WiWindy } from 'react-icons/wi';
-import { convertUnit, convertWindDirection, formatVisibility, convertUnixToString } from '../../FunctionStore';
-import { ContextCurrentWeather } from '../../context/context';
-import { useContext } from 'react';
-import { useSelector } from 'react-redux';
+import { convertUnit, convertWindDirection, formatVisibility } from '../Home';
+import { convertUnixToString } from '../Home';
 
-const HorizontalDetails = () => {
-
-    const { CurrentWeather } = useContext(ContextCurrentWeather)
-    const isFarenheit = useSelector((state) => state.tempUnit)
+const HorizontalDetails = (props) => {
 
     const HorizontalDetails = [
         {
             id: 1,
             Icon: CgArrowUp,
             title: "Max Temp",
-            value: convertUnit(CurrentWeather.main.temp_max, isFarenheit),
+            value: convertUnit(props.weather.main.temp_max),
         },
         {
             id: 2,
             Icon: CgArrowDown,
             title: "Min Temp",
-            value: convertUnit(CurrentWeather.main.temp_min, isFarenheit),
+            value: convertUnit(props.weather.main.temp_min),
         },
         {
             id: 3,
             Icon: WiSunrise,
             title: "Sunrise",
-            value: convertUnixToString(CurrentWeather.sys.sunrise, CurrentWeather.timezone),
+            value: convertUnixToString(props.weather.sys.sunrise, props.weather.timezone),
         },
         {
             id: 4,
             Icon: WiSunset,
             title: "Sunset",
-            value: convertUnixToString(CurrentWeather.sys.sunset, CurrentWeather.timezone),
+            value: convertUnixToString(props.weather.sys.sunset, props.weather.timezone),
         },
         {
             id: 5,
             Icon: WiBarometer,
             title: "Pressure",
-            value: CurrentWeather.main.pressure + " hPa",
+            value: props.weather.main.pressure + " hPa",
         },
         {
             id: 6,
             Icon: WiWindy,
             title: "Wind Direction",
-            value: convertWindDirection(CurrentWeather.wind.deg),
+            value: convertWindDirection(props.weather.wind.deg),
         },
         {
             id: 7,
             Icon: FiWind,
             title: "Wind Gust",
-            value: `${CurrentWeather.wind.gust ? (CurrentWeather.wind.gust * 3.6).toFixed(2) + " km/h" : "NA"}`
+            value: `${props.weather.wind.gust ? (props.weather.wind.gust * 3.6).toFixed(2) + " km/h" : "NA"}`
 
         },
         {
             id: 8,
             Icon: MdVisibility,
             title: "Visibility",
-            value: formatVisibility(CurrentWeather.visibility),
+            value: formatVisibility(props.weather.visibility),
         },
     ];
 

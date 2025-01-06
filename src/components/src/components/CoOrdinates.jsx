@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
-import { convertUnixToTime, convertTimezone, convertWindDirection, formatVisibility } from './FunctionStore'
+import { convertUnixToTime } from './Home'
+import { convertTimezone } from './Home'
+import { convertWindDirection } from './Home'
+import { formatVisibility } from './Home'
 
 const CoOrdinates = () => {
 
@@ -47,6 +50,12 @@ const CoOrdinates = () => {
         setError("")
     }
 
+    const getTime = (event) => {
+        let currentDate = new Date(event * 1000);
+        return currentDate.toTimeString();
+    }
+
+
     const handleChange = (event) => {
         setform({ ...form, [event.target.name]: event.target.value })
     }
@@ -59,7 +68,7 @@ const CoOrdinates = () => {
                 <input value={form.lon} name='lon' onChange={handleChange} className='border border-black rounded-md p-1' type="number" placeholder='Enter longitude' />
             </div>
             <div className='flex justify-center min-w-96'>
-                <button className='bg-blue-500 font-bold border text-xl text-white py-1 px-2 rounded-md' onClick={showWeather} >SeeWeather</button>
+                <button className='bg-blue-500 font-bold border text-xl text-white py-1 px-2 rounded-md' onClick={showWeather}>SeeWeather</button>
             </div>
             {error !== "" && <div className='flex justify-center h-20 items-center text-lg font-medium text-center min-w-96'>{error}</div>}
             <div className='tableContainer flex justify-center p-3 min-w-96'>

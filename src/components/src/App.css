@@ -1,0 +1,99 @@
+/* to avoid fixed position of navbar */
+body{
+    margin-top: 72px;
+    background: linear-gradient(to right, #f8fafc, #e2e8f0, #cbd5e1);
+}
+
+/* Co-ordinates page */
+.tableContainer table tbody tr td:first-child {
+    background-color: rgb(251 146 60);
+    padding: 5px 15px 5px 15px;
+    font-weight: 600;
+}
+.tableContainer table tbody tr td:last-child {
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(254 215 170);
+}
+.tableContainer table tbody tr {
+    border-bottom: 1px solid white;
+}
+.tableContainer table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Home page */
+.link-styles_Home{
+    @apply text-blue-600 underline;
+}
+.item-styles_Home{
+    @apply py-5
+}
+
+@media only screen and (max-width: 912px) {
+/* Navbar menu items are displayed in a dropdown */
+    .navbar {
+            display: none;
+        }
+    }
+@media only screen and (min-width: 913px) {
+/* Dropdown changes to it's previous state in Navbar*/
+    .dropdown {
+        display: none;
+    }
+}
+@media only screen and (max-width: 384px) {
+/* reduces gap between navTitle and Time in Navbar */
+    .navTitle{
+        gap: 18px;
+    }
+}
+@media only screen and (max-width: 428px) {
+/* again to avoid fixed position of navbar */
+    body{
+        margin-top: 136px;
+    }
+}
+
+/* weatherLog Table */
+.weatherlog thead tr th{
+    border-right: 1px solid white ;
+}
+.weatherlog thead tr th:last-child{
+    border-right: none ;
+}
+.weatherlog tbody tr td{
+    border-right: 1px solid white ;
+}
+.weatherlog tbody tr td:last-child{
+    border-right: none ;
+}
+.weatherlog tbody tr{
+    border-bottom: 1px solid white;
+}
+.weatherlog tr td{
+    padding: 5px 15px 5px 15px;
+}
+.weatherlog tr th{
+    padding: 5px 15px 5px 15px;
+}
+.weatherlog tbody tr:last-child{
+    border-bottom: none;
+}
+
+/* weatherLogDetails table */
+.weatherLogDetails tbody tr td:first-child{
+    background-color: rgb(251 146 60);
+    padding: 5px 15px 5px 15px;
+    font-weight: 600;
+}
+.weatherLogDetails tbody tr td:last-child{
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(254 215 170);
+}
+.weatherLogDetails tbody tr{
+    border-bottom: 1px solid white;
+}
+.weatherLogDetails tbody tr:last-child{
+    border-bottom: none;
+}
+
