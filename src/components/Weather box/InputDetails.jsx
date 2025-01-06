@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { BiSearch } from 'react-icons/bi';
 import { ContextTempUnit } from '../context/context';
 import Search from '../search/search';
 

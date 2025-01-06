@@ -39,13 +39,13 @@ const MainComp = (props) => {
     <div className='flex flex-col justify-center items-center'>
       <ContextTempUnit.Provider value={{ changeTempUnit, setChangeTempUnit }}>
         <div className={`py-5 px-20 rounded-xl shadow-xl shadow-gray-500 mb-9 ${getWeatherStyle().bg} ${getWeatherStyle().text}`}>
-          <Topbuttons weather={props.weather} askUser={props.askUser} getWeather={props.getWeather}/>
-          <InputDetails weather={props.weather} show={props.showWeatherCity} getWeather={props.getWeather} />
-          <TimeAndLocation weather={props.weather} locationCheck={props.locationCheck}/>
+          <Topbuttons weather={props.weather} askUser={props.askUser} getWeather={props.getWeather} />
+          <InputDetails weather={props.weather} getWeather={props.getWeather} />
+          <TimeAndLocation weather={props.weather} locationCheck={props.locationCheck} />
           <TempAndDetails weather={props.weather} />
           <HorizontalDetails weather={props.weather} />
         </div>
-        <Forecast forecast={props.forecast} getWeatherStyle={getWeatherStyle}/>
+        <Forecast forecast={props.forecast} getWeatherStyle={getWeatherStyle} />
       </ContextTempUnit.Provider>
     </div>
   );

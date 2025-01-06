@@ -1,12 +1,8 @@
 import React from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "./api";
-import { useDispatch } from "react-redux";
-import { setSearch } from "../../redux/location/location";
 
 const Search = ({ onSearchChange }) => {
-
-    const dispatch = useDispatch();
 
     const loadOptions = async (inputValue) => {
         return await fetch(
@@ -30,19 +26,9 @@ const Search = ({ onSearchChange }) => {
             });
     };
 
-    // const handleOnChangeagain = (searchData) => {
-    //     return new Promise((resolve) => {
-    //         dispatch(setSearch(searchData));
-    //         resolve();
-    //     });
-    // };
 
     const handleOnChange = async (searchData) => {
-        // handleOnChangeagain(searchData).then(() => {
         onSearchChange(searchData);
-        // dispatch(setSearch())
-        // Additional actions can be performed here after onSearchChange is resolved
-        // });
     };
 
     return (

@@ -5,10 +5,8 @@ export const locationSlice = createSlice({
     initialState: false,
 
     reducers: {
-        setSearch: (state) => {return true}
-            // console.log("action",action)
-            
-        
+        setSearch: (state) => { return true }
+        // console.log("action",action)
         ,
     },
 })

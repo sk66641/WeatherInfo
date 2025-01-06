@@ -1,7 +1,6 @@
 import { BiCurrentLocation } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
-// import { searchForWorkspaceRoot } from 'vite';
-// import { loadOptions } from '../search/search'
+
 const Topbuttons = (props) => {
     const [searchedCityList, setSearchedCityList] = useState([
         {
@@ -15,32 +14,32 @@ const Topbuttons = (props) => {
         },
         {
 
-            label: "Delhi, Delhi, IN", // From the `label` property
+            label: "Delhi, Delhi, IN",
             city: "Delhi",
             region: "Delhi",
-            countryCode: "IN",         // From the `name` property
-            lat: 28.6667,            // From `coord.lat`
-            lon: 77.2167,            // From `coord.lon`
+            countryCode: "IN",
+            lat: 28.6667,
+            lon: 77.2167,
 
         },
         {
 
-            label: "Moscow, Moscow, RU", // From the `label` property
+            label: "Moscow, Moscow, RU",
             city: "Moscow",
             region: "Moscow",
-            countryCode: "RU",         // From the `name` property
-            lat: 55.7506,               // From `coord.lat`
-            lon: 37.6175,               // From `coord.lon`
+            countryCode: "RU",
+            lat: 55.7506,
+            lon: 37.6175,
 
         },
         {
 
-            label: "Berlin, Berlin, DE", // From the `label` property
+            label: "Berlin, Berlin, DE",
             city: "Berlin",
             region: "Berlin",
-            countryCode: "DEcity",         // From the `name` property
-            lat: 52.5167,               // From `coord.lat`
-            lon: 13.3833,               // From `coord.lon`
+            countryCode: "DEcity",
+            lat: 52.5167,
+            lon: 13.3833,
 
         }])
 
