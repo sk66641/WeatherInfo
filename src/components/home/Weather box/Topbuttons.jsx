@@ -1,7 +1,11 @@
 import { BiCurrentLocation } from 'react-icons/bi'
 import { useState, useEffect } from 'react'
+import { ContextCurrentWeather } from '../../context/context'
+import { useContext } from 'react'
 
-const Topbuttons = ({ CurrentWeather, askUser, getWeather }) => {
+const Topbuttons = ({ askUser, getWeather }) => {
+    const { CurrentWeather } = useContext(ContextCurrentWeather)
+
     const [searchedCityList, setSearchedCityList] = useState([
         {
 

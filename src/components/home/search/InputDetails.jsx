@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
-import { ContextTempUnit } from '../../context/context';
+import React from 'react';
 import Search from './search';
+import { useDispatch } from 'react-redux';
+import { setChangeTempUnitRedux } from '../../../redux/changeTempUnit/changeTempUnitRedux';
 
-const InputDetails = ({CurrentWeather, getWeather}) => {
-  const { setChangeTempUnit } = useContext(ContextTempUnit);
+const InputDetails = ({ getWeather }) => {
+
+  const dispatch = useDispatch()
 
   const handleOnSearchChange = async (searchData) => {
     getWeather(searchData.lat, searchData.lon, searchData);
@@ -17,14 +19,14 @@ const InputDetails = ({CurrentWeather, getWeather}) => {
 
       <div className="flex flex-row w-1/5 items-center justify-start">
         <button
-          onClick={() => setChangeTempUnit(false)}
+          onClick={() => dispatch(setChangeTempUnitRedux(false))}
           className="text-2xl font-medium transition ease-out hover:scale-125"
         >
           °C
         </button>
         <p className="text-2xl font-medium mx-1">|</p>
         <button
-          onClick={() => setChangeTempUnit(true)}
+          onClick={() => dispatch(setChangeTempUnitRedux(true))}
           className="text-2xl font-medium transition ease-out hover:scale-125"
         >
           °F

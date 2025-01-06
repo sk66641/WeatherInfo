@@ -1,3 +1,2 @@
 import { createContext } from "react";
-export const ContextTempUnit  = createContext()
-export const ContextSearchData = createContext()
+export const ContextCurrentWeather = createContext()

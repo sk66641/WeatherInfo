@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import locationReducer from './location/location'
+import changeTempUnitReduxReducer from './changeTempUnit/changeTempUnitRedux'
 
 export const store = configureStore({
     reducer: {
-        location: locationReducer,
+        tempUnit: changeTempUnitReduxReducer,
     },
 })

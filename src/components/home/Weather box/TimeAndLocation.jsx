@@ -1,8 +1,12 @@
 import React from 'react';
 import { convertTimezone, convertUnixToTime } from '../../FunctionStore';
 import { TbWorldLatitude, TbWorldLongitude } from 'react-icons/tb';
+import { ContextCurrentWeather } from '../../context/context';
+import { useContext } from 'react';
 
-const TimeAndLocation = ({CurrentWeather}) => {
+const TimeAndLocation = () => {
+
+    const { CurrentWeather } = useContext(ContextCurrentWeather)
 
     return (
         <div>

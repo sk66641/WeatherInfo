@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Loading';
 import MainComp from './Weather box/MainComp';
+import { ContextCurrentWeather } from '../context/context';
 
 const Home = () => {
     const [CurrentWeather, setCurrentWeather] = useState({});
@@ -57,7 +58,9 @@ const Home = () => {
         <>
             <div className='flex justify-center px-3 mt-24 min-w-[430px]'>
                 {CurrentWeather.main && (
-                    <MainComp CurrentWeather={CurrentWeather} askUser={askUser} getWeather={getWeather} weatherForecast={weatherForecast} />
+                    <ContextCurrentWeather.Provider value={{ CurrentWeather }}>
+                        <MainComp askUser={askUser} getWeather={getWeather} weatherForecast={weatherForecast} />
+                    </ContextCurrentWeather.Provider>
                 )}
             </div>
             {!CurrentWeather.main && <div className='min-w-96 flex justify-center'><Loading type="spinningBubbles" color="red" /></div>}

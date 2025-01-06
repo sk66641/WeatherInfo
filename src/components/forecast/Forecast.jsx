@@ -3,9 +3,11 @@ import { Accordion, AccordionItemHeading, AccordionItem, AccordionItemButton, Ac
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { MdArrowDropDown } from 'react-icons/md'
 import { convertUnit, convertUnixToDate, convertUnixToString } from '../FunctionStore'
+import { useSelector } from 'react-redux';
 
 const Forecast = ({ weatherForecast, getWeatherStyle }) => {
 
+    const isFarenheit = useSelector((state) => state.tempUnit)
 
     /* 
         Object.entries():
@@ -58,7 +60,7 @@ const Forecast = ({ weatherForecast, getWeatherStyle }) => {
                                                 src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                                                 alt="Weather Icon"
                                             />
-                                            <p className="text-sm text-center">{convertUnit(item.main.temp)}</p>
+                                            <p className="text-sm text-center">{convertUnit(item.main.temp, isFarenheit)}</p>
                                         </div>
                                     ))}
                                 </div>

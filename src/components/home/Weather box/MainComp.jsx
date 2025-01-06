@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Topbuttons from './Topbuttons';
 import InputDetails from '../search/InputDetails';
 import TimeAndLocation from './TimeAndLocation';
 import TempAndDetails from './TempAndDetails';
 import HorizontalDetails from './HorizontalDetails';
-import { ContextTempUnit } from '../../context/context';
+import { ContextCurrentWeather } from '../../context/context';
 import Forecast from '../../forecast/Forecast';
 
-const MainComp = ({CurrentWeather, askUser, getWeather, weatherForecast}) => {
-  const [changeTempUnit, setChangeTempUnit] = useState(false);
+const MainComp = ({ askUser, getWeather, weatherForecast }) => {
+
+  const { CurrentWeather } = useContext(ContextCurrentWeather)
 
   const weatherStyles = {
     "01n": { bg: "bg-gradient-to-br from-yellow-500 to-orange-500", text: "text-yellow-100" },
@@ -37,16 +38,14 @@ const MainComp = ({CurrentWeather, askUser, getWeather, weatherForecast}) => {
 
   return (
     <div className='flex flex-col justify-center items-center'>
-      <ContextTempUnit.Provider value={{ changeTempUnit, setChangeTempUnit }}>
-        <div className={`py-5 px-20 rounded-xl shadow-xl shadow-gray-500 mb-9 ${getWeatherStyle().bg} ${getWeatherStyle().text}`}>
-          <Topbuttons CurrentWeather={CurrentWeather} askUser={askUser} getWeather={getWeather} />
-          <InputDetails CurrentWeather={CurrentWeather} getWeather={getWeather} />
-          <TimeAndLocation CurrentWeather={CurrentWeather} />
-          <TempAndDetails CurrentWeather={CurrentWeather} />
-          <HorizontalDetails CurrentWeather={CurrentWeather} />
-        </div>
-        <Forecast weatherForecast={weatherForecast} getWeatherStyle={getWeatherStyle} />
-      </ContextTempUnit.Provider>
+      <div className={`py-5 px-20 rounded-xl shadow-xl shadow-gray-500 mb-9 ${getWeatherStyle().bg} ${getWeatherStyle().text}`}>
+        <Topbuttons askUser={askUser} getWeather={getWeather} />
+        <InputDetails getWeather={getWeather} />
+        <TimeAndLocation />
+        <TempAndDetails />
+        <HorizontalDetails />
+      </div>
+      <Forecast weatherForecast={weatherForecast} getWeatherStyle={getWeatherStyle} />
     </div>
   );
 };

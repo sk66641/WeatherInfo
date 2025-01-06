@@ -4,21 +4,27 @@ import { FiWind } from 'react-icons/fi';
 import { MdVisibility } from "react-icons/md";
 import { WiBarometer, WiSunrise, WiSunset, WiWindy } from 'react-icons/wi';
 import { convertUnit, convertWindDirection, formatVisibility, convertUnixToString } from '../../FunctionStore';
+import { ContextCurrentWeather } from '../../context/context';
+import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 
-const HorizontalDetails = ({CurrentWeather}) => {
+const HorizontalDetails = () => {
+
+    const { CurrentWeather } = useContext(ContextCurrentWeather)
+    const isFarenheit = useSelector((state) => state.tempUnit)
 
     const HorizontalDetails = [
         {
             id: 1,
             Icon: CgArrowUp,
             title: "Max Temp",
-            value: convertUnit(CurrentWeather.main.temp_max),
+            value: convertUnit(CurrentWeather.main.temp_max, isFarenheit),
         },
         {
             id: 2,
             Icon: CgArrowDown,
             title: "Min Temp",
-            value: convertUnit(CurrentWeather.main.temp_min),
+            value: convertUnit(CurrentWeather.main.temp_min, isFarenheit),
         },
         {
             id: 3,

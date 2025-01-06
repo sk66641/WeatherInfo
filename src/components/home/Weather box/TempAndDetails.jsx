@@ -2,14 +2,22 @@ import { FaThermometerEmpty } from "react-icons/fa";
 import { BiSolidDropletHalf } from "react-icons/bi";
 import { FiWind } from "react-icons/fi";
 import { convertUnit } from "../../FunctionStore";
-const TempAndDetails = ({CurrentWeather}) => {
+import { ContextCurrentWeather } from "../../context/context";
+import { useContext } from "react";
+import { useSelector } from "react-redux";
+
+const TempAndDetails = () => {
+
+    const { CurrentWeather } = useContext(ContextCurrentWeather)
+    const isFarenheit = useSelector((state) => state.tempUnit)
+    // console.log("from tempAndDetails.jsx", isFarenheit)
 
     const verticalDetails = [
         {
             id: 1,
             Icon: FaThermometerEmpty,
             title: "Feels like",
-            value: convertUnit(CurrentWeather.main.feels_like),
+            value: convertUnit(CurrentWeather.main.feels_like, isFarenheit),
         },
         {
             id: 2,
@@ -40,7 +48,7 @@ const TempAndDetails = ({CurrentWeather}) => {
                         className="w-20"
                     />
                     {/* if true F, else C */}
-                    <p className="text-5xl text-center">{convertUnit(CurrentWeather.main.temp)}</p>
+                    <p className="text-5xl text-center">{convertUnit(CurrentWeather.main.temp, isFarenheit)}</p>
                 </div>
                 <div className="flex flex-wrap text-wrap text-center flex-col gap-2 items-start w-1/4">
                     {verticalDetails.map(({ id, Icon, title, value }) => (
@@ -50,9 +58,9 @@ const TempAndDetails = ({CurrentWeather}) => {
                         >
                             <Icon size={18} />
                             <p className="font-light ml-1">
-                            {`${title}: `}
-                            <span className="font-medium ml-1">{value}</span>
-                        </p>
+                                {`${title}: `}
+                                <span className="font-medium ml-1">{value}</span>
+                            </p>
                         </div>
                     ))}
                 </div>

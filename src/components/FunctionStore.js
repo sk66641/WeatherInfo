@@ -1,14 +1,9 @@
-import { ContextTempUnit } from './context/context'
 import { DateTime } from 'luxon';
-import { useContext } from 'react';
-
-export const fixTo0 = (value) => value.toFixed(0);
 
 export const convertToF = (celsius) => (celsius * 9 / 5) + 32;
 
-export const convertUnit = (celsius) => {
-    const { changeTempUnit } = useContext(ContextTempUnit);
-    return `${changeTempUnit ? convertToF(celsius.toFixed(0)).toFixed(0) + " °F" : celsius.toFixed(0) + " °C"}`;
+export const convertUnit = (celsius, isFarenheit) => {
+    return `${isFarenheit ? convertToF(celsius.toFixed(0)).toFixed(0) + " °F" : celsius.toFixed(0) + " °C"}`;
 };
 
 export const convertUnixToTime = (unixTimestamp, timezoneOffset) => {
