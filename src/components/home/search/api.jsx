@@ -1,7 +1,8 @@
+const RapidAPI_Key = import.meta.env.VITE_RapidAPI_Key;
 export const geoApiOptions = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "edfd2087d3mshbb1ecdfa657d6eep17771cjsn91db3ffd78ab",// enter your rapid api key here
+    "X-RapidAPI-Key": `${RapidAPI_Key}`,// enter your rapid api key here
     "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
   },
 };
