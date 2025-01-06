@@ -2,6 +2,8 @@ import { DateTime } from 'luxon';
 
 export const convertToF = (celsius) => (celsius * 9 / 5) + 32;
 
+// React hooks, including useSelector, cannot be used in plain functions—they can only be called within React functional components or custom hooks. That's why i need to pass isFarenheit as an argument
+// for more info: file:///home/sanu/Documents/Web%20Deployment/WeatherInfo/react_hook_outside_component_issue.md
 export const convertUnit = (celsius, isFarenheit) => {
     return `${isFarenheit ? convertToF(celsius.toFixed(0)).toFixed(0) + " °F" : celsius.toFixed(0) + " °C"}`;
 };
