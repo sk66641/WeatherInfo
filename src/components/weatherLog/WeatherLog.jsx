@@ -46,7 +46,7 @@ const WeatherLog = () => {
   }, [weatherList])
 
 
-  // Related concept here: file:///home/sanu/Documents/Web%20Deployment/weather-web/weather%20web/public/async_react.md
+  // Related concept here: file:///home/sanu/Documents/Web%20Deployment/WeatherInfo/async_react.md
 
   const showWeather = () => {
     if (form.lat === "" || form.lon === "") {
@@ -74,11 +74,6 @@ const WeatherLog = () => {
     setform({ lat: "", lon: "" })
     setCurrentWeather({})
     setError("")
-  }
-
-  const getTimeStamp = (event) => {
-    let currentDate = new Date(event * 1000);
-    return currentDate.toTimeString();
   }
 
   const handleChange = (event) => {
