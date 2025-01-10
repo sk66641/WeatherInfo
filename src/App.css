@@ -41,12 +41,6 @@ body{
         display: none;
     }
 }
-@media only screen and (max-width: 384px) {
-/* reduces gap between navTitle and Time in Navbar */
-    .navTitle{
-        gap: 18px;
-    }
-}
 @media only screen and (max-width: 428px) {
 /* again to avoid fixed position of navbar */
     body{

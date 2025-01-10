@@ -5,6 +5,7 @@ import CoOrdinates from "./components/CoOrdinates";
 import Home from "./components/home/Home";
 import WeatherLog from "./components/weatherLog/WeatherLog";
 import './App.css';
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/coordinates" element={<CoOrdinates />} />
         <Route path="/weatherlogs" element={<WeatherLog />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

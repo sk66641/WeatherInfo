@@ -34,7 +34,7 @@ const Forecast = ({ weatherForecast, getWeatherStyle }) => {
     // { weatherForecast.list && console.log(Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone))) }
     return (
 
-        <div className='flex justify-center mb-6'>
+        <div className='flex justify-center mb-16'>
             <Accordion allowZeroExpanded className='w-[786px] max-md:w-[400px] shadow-xl shadow-gray-500 rounded-xl'>
                 {weatherForecast.list &&
                     Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone)).map(([date, items], index) => (
