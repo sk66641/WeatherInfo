@@ -30,11 +30,12 @@ const Forecast = ({ weatherForecast, getWeatherStyle }) => {
             return accumulator;
         }, {});
     };
+    // console.log(dropDownIcon)
     // { weatherForecast.list && console.log(weatherForecast) }
     // { weatherForecast.list && console.log(Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone))) }
     return (
 
-        <div className='flex justify-center mb-16'>
+        <div className='flex justify-center mb-20'>
             <Accordion allowZeroExpanded className='w-[786px] max-md:w-[400px] shadow-xl shadow-gray-500 rounded-xl'>
                 {weatherForecast.list &&
                     Object.entries(groupByTimestamp(weatherForecast.list, weatherForecast.city.timezone)).map(([date, items], index) => (
