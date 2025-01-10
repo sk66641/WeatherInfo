@@ -5,7 +5,9 @@ import { redirect } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className='bg-gray-700 flex justify-center items-center gap-6 py-1 shadow-xl shadow-gray-400 min-w-[430px] fixed bottom-0 w-full'>
+        //         // z-index is set to 1000 to manage details section in WeatherLog whose
+
+        <footer className='footer-shadow bg-gray-700 flex justify-center items-center gap-6 py-1 min-w-[430px] fixed bottom-0 w-full z-[1000]'>
             <a href="https://github.com/sk66641" target='_blank' className='hover:scale-110 transition-transform duration-300'>
                 <BiLogoGithub color='lightgreen' size={40} />
             </a>

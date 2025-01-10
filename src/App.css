@@ -93,3 +93,6 @@ body{
     height: 100px;
     background-color: transparent;
 }
+.footer-shadow {
+    box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.1);
+}
