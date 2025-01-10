@@ -1,12 +1,14 @@
 import React from 'react'
 import LiveClock from './LiveClock'
-import Dropdown from './weatherLog/Dropdown'
+import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 import { BiSun } from 'react-icons/bi'
 
 const Navbar = () => {
     return (
-        <nav className='bg-gray-700  py-1 flex w-full justify-around items-center content-center px-5 gap-9 fixed top-0 shadow-xl shadow-gray-400 text-purple-100 z-[10]'>
+        // z-index is set to 1000 to manage details section in WeatherLog whose
+        <nav className='bg-gray-700  py-1 flex w-full justify-around items-center content-center px-5 gap-9 fixed top-0 shadow-xl shadow-gray-400 text-purple-100 
+        z-[1000]'>
             <div className='navTitle flex items-center gap-7 text-center justify-center'>
                 <LiveClock />
                 <div className='flex justify-center items-center gap-2'>

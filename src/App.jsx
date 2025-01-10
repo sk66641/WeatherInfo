@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import CoOrdinates from "./components/CoOrdinates";
 import Home from "./components/home/Home";
-import WeatherLog from "./components/weatherLog/WeatherLog";
+import WeatherLog from "./components/WeatherLog";
 import './App.css';
 import Footer from "./components/Footer";
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Popup from 'reactjs-popup';
-import Loading from '../Loading';
+import Loading from './Loading';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { convertTimezone, convertUnixToTime, formatVisibility, convertWindDirection } from '../FunctionStore';
+import { convertTimezone, convertUnixToTime, formatVisibility, convertWindDirection } from './FunctionStore';
 
 const WeatherLog = () => {
   const [weatherList, setWeatherList] = useState([]) // weatherList is an array
@@ -165,7 +165,7 @@ const WeatherLog = () => {
       <div className='flex justify-center p-3 min-w-96'>
         {weatherList.length > 0 &&
           (
-            <table className='weatherlog w-1/2 text-center rounded-md overflow-hidden'>
+            <table className='weatherlog w-1/2 text-center rounded-md overflow-hidden mb-20'>
               <thead className='bg-orange-400'>
                 <tr>
                   <th>Temperature (°C)</th>
@@ -202,7 +202,7 @@ const WeatherLog = () => {
                               </tr>
                               <tr>
                                 <td>Weather</td>
-                                <td className='flex justify-center items-center gap-1'>
+                                <td className='flex justify-center items-center gap-1 flex-wrap'>
                                   <img width={35} src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weather_image" />
                                   <span className='capitalize'>{weather.weather[0].description}</span>
                                 </td>
@@ -259,6 +259,7 @@ const WeatherLog = () => {
                                 <td>Time Stamp</td>
                                 <td>{convertUnixToTime(weather.dt, weather.timezone)}</td>
                               </tr>
+                              <tr></tr>
                             </tbody>
                           </table>
                         </Popup>

@@ -16,6 +16,7 @@ body{
 }
 .tableContainer table tbody tr {
     border-bottom: 1px solid white;
+    border-radius: 50%;
 }
 .tableContainer table tbody tr:last-child {
     border-bottom: none;
@@ -89,5 +90,6 @@ body{
 }
 .weatherLogDetails tbody tr:last-child{
     border-bottom: none;
+    height: 100px;
+    background-color: transparent;
 }
-
