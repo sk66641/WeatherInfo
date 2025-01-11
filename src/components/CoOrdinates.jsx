@@ -65,7 +65,7 @@ const CoOrdinates = () => {
             <div className='tableContainer flex justify-center p-3 min-w-96'>
                 {CurrentWeather.main &&
                     (
-                        <table className='text-center rounded-md overflow-hidden'>
+                        <table className='text-center rounded-md overflow-hidden mb-20'>
                             <tbody>
                                 <tr>
                                     <td>Location</td>
