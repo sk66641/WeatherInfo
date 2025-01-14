@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertTimezone, convertUnixToTime } from '../../FunctionStore';
+import { convertTimezone, convertUnixToDateTime } from '../../FunctionStore';
 import { TbWorldLatitude, TbWorldLongitude } from 'react-icons/tb';
 import { ContextCurrentWeather } from '../../context/context';
 import { useContext } from 'react';
@@ -12,7 +12,7 @@ const TimeAndLocation = () => {
         <div>
             <div className="flex flex-wrap text-wrap text-center items-center justify-center my-6">
                 <p className="text-xl font-light">
-                    {convertUnixToTime(CurrentWeather.dt, CurrentWeather.timezone)} | {convertTimezone(CurrentWeather.timezone)}
+                    {convertUnixToDateTime(CurrentWeather.dt, CurrentWeather.timezone)} | {convertTimezone(CurrentWeather.timezone)}
                 </p>
             </div>
 

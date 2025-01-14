@@ -3,7 +3,7 @@ import { CgArrowDown, CgArrowUp } from 'react-icons/cg';
 import { FiWind } from 'react-icons/fi';
 import { MdVisibility } from "react-icons/md";
 import { WiBarometer, WiSunrise, WiSunset, WiWindy } from 'react-icons/wi';
-import { convertUnit, convertWindDirection, formatVisibility, convertUnixToString } from '../../FunctionStore';
+import { convertUnit, convertWindDirection, formatVisibility, convertUnixToTime } from '../../FunctionStore';
 import { ContextCurrentWeather } from '../../context/context';
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
@@ -30,13 +30,13 @@ const HorizontalDetails = () => {
             id: 3,
             Icon: WiSunrise,
             title: "Sunrise",
-            value: convertUnixToString(CurrentWeather.sys.sunrise, CurrentWeather.timezone),
+            value: convertUnixToTime(CurrentWeather.sys.sunrise, CurrentWeather.timezone),
         },
         {
             id: 4,
             Icon: WiSunset,
             title: "Sunset",
-            value: convertUnixToString(CurrentWeather.sys.sunset, CurrentWeather.timezone),
+            value: convertUnixToTime(CurrentWeather.sys.sunset, CurrentWeather.timezone),
         },
         {
             id: 5,

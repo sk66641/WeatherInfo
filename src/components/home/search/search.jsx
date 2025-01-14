@@ -4,13 +4,13 @@ import { geoApiOptions, GEO_API_URL } from "./api";
 
 const Search = ({ onSearchChange }) => {
 
-    const loadOptions = async (inputValue) => {
-        return await fetch(
+    const loadOptions = (inputValue) => {
+        return fetch(
             `${GEO_API_URL}/cities?namePrefix=${inputValue}`,
             geoApiOptions
         )
-            .then(async (response) => await response.json())
-            .then((response) => {
+            .then(response => response.json())
+            .then(response => {
                 return {
                     options: response.data.map((city) => {
                         return {

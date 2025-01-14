@@ -2,7 +2,7 @@ import React from 'react'
 import { Accordion, AccordionItemHeading, AccordionItem, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { MdArrowDropDown } from 'react-icons/md'
-import { convertUnit, convertUnixToDate, convertUnixToString } from '../FunctionStore'
+import { convertUnit, convertUnixToDateUTC, convertUnixToTimeUTC } from '../FunctionStore'
 import { useSelector } from 'react-redux';
 
 const Forecast = ({ weatherForecast, getWeatherStyle }) => {
@@ -22,7 +22,7 @@ const Forecast = ({ weatherForecast, getWeatherStyle }) => {
 
     const groupByTimestamp = (list, timezone) => {
         return list.reduce((accumulator, current) => {
-            const date = convertUnixToDate(current.dt, timezone)
+            const date = convertUnixToDateUTC(current.dt, timezone)
             if (!accumulator[date]) {
                 accumulator[date] = []; // Initialize a new group if it doesn't exist
             }
@@ -54,7 +54,7 @@ const Forecast = ({ weatherForecast, getWeatherStyle }) => {
                                             key={index}
                                             className={`flex flex-col justify-center items-center ${getWeatherStyle().bg} ${getWeatherStyle().text} p-4 rounded-xl shadow-sm w-40`}
                                         >
-                                            <p className="text-sm font-light text-center">{convertUnixToString(item.dt, item.timezone)}</p>
+                                            <p className="text-sm font-light text-center">{convertUnixToTimeUTC(item.dt, item.timezone)}</p>
                                             <p className="text-sm capitalize text-center">{item.weather[0].main}</p>
                                             <img
                                                 width={35}

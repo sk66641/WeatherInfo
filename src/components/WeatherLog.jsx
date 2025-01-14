@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Popup from 'reactjs-popup';
 import Loading from './Loading';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { convertTimezone, convertUnixToTime, formatVisibility, convertWindDirection } from './FunctionStore';
+import { convertTimezone, convertUnixToDateTime, formatVisibility, convertWindDirection } from './FunctionStore';
 
 const WeatherLog = () => {
   const [weatherList, setWeatherList] = useState([]) // weatherList is an array
@@ -249,15 +249,15 @@ const WeatherLog = () => {
                               </tr>
                               <tr>
                                 <td>Sunrise</td>
-                                <td>{convertUnixToTime(weather.sys.sunrise, weather.timezone)} </td>
+                                <td>{convertUnixToDateTime(weather.sys.sunrise, weather.timezone)} </td>
                               </tr>
                               <tr>
                                 <td>Sunset</td>
-                                <td>{convertUnixToTime(weather.sys.sunset, weather.timezone)} </td>
+                                <td>{convertUnixToDateTime(weather.sys.sunset, weather.timezone)} </td>
                               </tr>
                               <tr>
                                 <td>Time Stamp</td>
-                                <td>{convertUnixToTime(weather.dt, weather.timezone)}</td>
+                                <td>{convertUnixToDateTime(weather.dt, weather.timezone)}</td>
                               </tr>
                               <tr></tr>
                             </tbody>

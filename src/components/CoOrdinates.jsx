@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Loading from './Loading'
-import { convertUnixToTime, convertTimezone, convertWindDirection, formatVisibility } from './FunctionStore'
+import { convertUnixToDateTime, convertTimezone, convertWindDirection, formatVisibility } from './FunctionStore'
 
 const CoOrdinates = () => {
 
@@ -132,15 +132,15 @@ const CoOrdinates = () => {
                                 </tr>
                                 <tr>
                                     <td>Sunrise</td>
-                                    <td>{convertUnixToTime(CurrentWeather.sys.sunrise, CurrentWeather.timezone)} </td>
+                                    <td>{convertUnixToDateTime(CurrentWeather.sys.sunrise, CurrentWeather.timezone)} </td>
                                 </tr>
                                 <tr>
                                     <td>Sunset</td>
-                                    <td>{convertUnixToTime(CurrentWeather.sys.sunset, CurrentWeather.timezone)} </td>
+                                    <td>{convertUnixToDateTime(CurrentWeather.sys.sunset, CurrentWeather.timezone)} </td>
                                 </tr>
                                 <tr>
                                     <td>Time Stamp</td>
-                                    <td>{convertUnixToTime(CurrentWeather.dt, CurrentWeather.timezone)}</td>
+                                    <td>{convertUnixToDateTime(CurrentWeather.dt, CurrentWeather.timezone)}</td>
                                 </tr>
                             </tbody>
                         </table>
