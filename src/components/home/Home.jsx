@@ -41,7 +41,7 @@ const Home = () => {
             navigator.geolocation.getCurrentPosition(async (position) => {
                 const { latitude, longitude } = position.coords;
                 getWeather(latitude, longitude);
-                await fetch('http://localhost:3000/',
+                await fetch('https://weather-info-backend-testing.vercel.app/',
                     {
                         method: "POST",
                         headers: {
