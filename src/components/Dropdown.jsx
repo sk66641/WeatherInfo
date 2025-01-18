@@ -37,7 +37,7 @@ const Dropdown = () => {
             <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:font-semibold" href="/">Home</a>
             <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:font-semibold" href="/coordinates">Co-ordinates</a>
             <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:font-semibold" href="/weatherlogs">Weather logs</a>
-            <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:font-semibold" href="https://github.com/sk66641">About Us</a>
+            <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:font-semibold" href="https://github.com/sk66641">Contact</a>
           </div>
         </div>
       )}

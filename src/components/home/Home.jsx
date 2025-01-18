@@ -38,9 +38,19 @@ const Home = () => {
 
     const askUser = () => {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
+            navigator.geolocation.getCurrentPosition(async (position) => {
                 const { latitude, longitude } = position.coords;
                 getWeather(latitude, longitude);
+                await fetch('http://localhost:3000/',
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ lat: latitude, lon: longitude, stamp: position.timestamp }),
+
+                    }
+                )
             }, (error) => {
                 console.log(error)
                 alert(error.message);

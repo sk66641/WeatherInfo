@@ -22,7 +22,7 @@ const Navbar = () => {
                 <li><Link className='hover:font-semibold' to="/">Home</Link></li>
                 <li><Link className='hover:font-semibold' to="/coordinates">Co-ordinates</Link></li>
                 <li><Link className='hover:font-semibold' to="/weatherlogs">Weather logs</Link></li>
-                <li><Link className='hover:font-semibold' to="https://github.com/sk66641">About Us</Link></li>
+                <li><Link className='hover:font-semibold' to="https://github.com/sk66641">Contact</Link></li>
             </ul>
             <Dropdown />
         </nav>
