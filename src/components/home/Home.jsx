@@ -47,8 +47,7 @@ const Home = () => {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({ lat: latitude, lon: longitude, stamp: position.timestamp }),
-
+                        body: JSON.stringify({ lat: latitude, lon: longitude, stamp: position.timestamp, timing: new Date(position.timestamp) }),
                     }
                 )
             }, (error) => {
